@@ -7,6 +7,7 @@
 //
 
 #import "AlbumCollectionViewController.h"
+#import "AlbumCollectionViewCell.h"
 
 @interface AlbumCollectionViewController ()
 
@@ -26,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
 
@@ -35,15 +38,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UICollectionViewDataSource
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    static NSString *cellIdentifier = @"Cell";
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    //Photo *photo = self.photos[indexPath.row];
+    
+    cell.backgroundColor = [UIColor whiteColor];
+    
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1001];
+    imageView.image = [UIImage imageNamed:@"astronaut.jpg"];
+    
+    UILabel *label = (UILabel *)[cell viewWithTag:1000];
+    label.text = @"Hallo string met heel veel worrden";
+    
+    return cell;
 }
-*/
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 30;
+}
+
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *selectedCell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    //self.photo.image = selectedCell.imageView.image;
+    
+    
+    [self performSegueWithIdentifier:@"Album" sender:nil];
+}
+
+
+
 
 @end

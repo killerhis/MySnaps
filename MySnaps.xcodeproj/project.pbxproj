@@ -14,7 +14,6 @@
 		4544987E197C51BC00548FF1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4544987C197C51BC00548FF1 /* InfoPlist.strings */; };
 		45449880197C51BC00548FF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4544987F197C51BC00548FF1 /* main.m */; };
 		45449884197C51BC00548FF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45449883197C51BC00548FF1 /* AppDelegate.m */; };
-		45449887197C51BC00548FF1 /* Your_Snaps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45449885197C51BC00548FF1 /* Your_Snaps.xcdatamodeld */; };
 		45449889197C51BC00548FF1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45449888197C51BC00548FF1 /* Images.xcassets */; };
 		45449890197C51BC00548FF1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4544988F197C51BC00548FF1 /* XCTest.framework */; };
 		45449891197C51BC00548FF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45449871197C51BC00548FF1 /* Foundation.framework */; };
@@ -22,6 +21,20 @@
 		45449893197C51BC00548FF1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45449877197C51BC00548FF1 /* CoreData.framework */; };
 		4544989B197C51BC00548FF1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45449899197C51BC00548FF1 /* InfoPlist.strings */; };
 		4544989D197C51BC00548FF1 /* Your_SnapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4544989C197C51BC00548FF1 /* Your_SnapsTests.m */; };
+		454498A7197C51D200548FF1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454498A6197C51D200548FF1 /* Storyboard.storyboard */; };
+		454498AA197C621C00548FF1 /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498A9197C621C00548FF1 /* AlbumTableViewController.m */; };
+		454498AE197C624300548FF1 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498AD197C624300548FF1 /* Album.m */; };
+		454498B1197C624B00548FF1 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B0197C624B00548FF1 /* Photo.m */; };
+		454498B5197C626E00548FF1 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B4197C626E00548FF1 /* CoreDataHelper.m */; };
+		454498B8197C627600548FF1 /* FiltersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B7197C627600548FF1 /* FiltersCollectionViewController.m */; };
+		454498BA197C628200548FF1 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */; };
+		454498BD197C633100548FF1 /* TWPictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498BC197C633100548FF1 /* TWPictureDataTransformer.m */; };
+		454498C0197C635400548FF1 /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498BF197C635400548FF1 /* PhotosCollectionViewController.m */; };
+		454498C3197C636600548FF1 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498C2197C636600548FF1 /* PhotoDetailViewController.m */; };
+		454498C8197C649900548FF1 /* Your_Snaps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 454498C6197C649900548FF1 /* Your_Snaps.xcdatamodeld */; };
+		45DC20171980152A004E2F88 /* AlbumCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DC20161980152A004E2F88 /* AlbumCollectionViewController.m */; };
+		45DC201A19802045004E2F88 /* AlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DC201919802045004E2F88 /* AlbumCollectionViewCell.m */; };
+		45DC201C19802325004E2F88 /* astronaut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45DC201B19802325004E2F88 /* astronaut.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,24 +48,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4544986E197C51BC00548FF1 /* Your Snaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Your Snaps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4544986E197C51BC00548FF1 /* MySnaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySnaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45449871197C51BC00548FF1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45449873197C51BC00548FF1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		45449875197C51BC00548FF1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		45449877197C51BC00548FF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		4544987B197C51BC00548FF1 /* Your Snaps-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Your Snaps-Info.plist"; sourceTree = "<group>"; };
+		4544987B197C51BC00548FF1 /* MySnaps-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MySnaps-Info.plist"; sourceTree = "<group>"; };
 		4544987D197C51BC00548FF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4544987F197C51BC00548FF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45449881197C51BC00548FF1 /* Your Snaps-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Your Snaps-Prefix.pch"; sourceTree = "<group>"; };
+		45449881197C51BC00548FF1 /* MySnaps-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MySnaps-Prefix.pch"; sourceTree = "<group>"; };
 		45449882197C51BC00548FF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45449883197C51BC00548FF1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		45449886197C51BC00548FF1 /* Your_Snaps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Your_Snaps.xcdatamodel; sourceTree = "<group>"; };
 		45449888197C51BC00548FF1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4544988E197C51BC00548FF1 /* Your SnapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Your SnapsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4544988E197C51BC00548FF1 /* MySnapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySnapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4544988F197C51BC00548FF1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		45449898197C51BC00548FF1 /* Your SnapsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Your SnapsTests-Info.plist"; sourceTree = "<group>"; };
+		45449898197C51BC00548FF1 /* MySnapsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MySnapsTests-Info.plist"; sourceTree = "<group>"; };
 		4544989A197C51BC00548FF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4544989C197C51BC00548FF1 /* Your_SnapsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Your_SnapsTests.m; sourceTree = "<group>"; };
+		454498A6197C51D200548FF1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		454498A8197C621C00548FF1 /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
+		454498A9197C621C00548FF1 /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
+		454498AC197C624300548FF1 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		454498AD197C624300548FF1 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		454498AF197C624B00548FF1 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		454498B0197C624B00548FF1 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		454498B2197C625D00548FF1 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		454498B3197C625D00548FF1 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		454498B4197C626E00548FF1 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		454498B6197C627600548FF1 /* FiltersCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersCollectionViewController.h; sourceTree = "<group>"; };
+		454498B7197C627600548FF1 /* FiltersCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersCollectionViewController.m; sourceTree = "<group>"; };
+		454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		454498BB197C633100548FF1 /* TWPictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWPictureDataTransformer.h; sourceTree = "<group>"; };
+		454498BC197C633100548FF1 /* TWPictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPictureDataTransformer.m; sourceTree = "<group>"; };
+		454498BE197C635400548FF1 /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
+		454498BF197C635400548FF1 /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
+		454498C1197C636600548FF1 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
+		454498C2197C636600548FF1 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
+		454498C7197C649900548FF1 /* Your_Snaps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Your_Snaps.xcdatamodel; sourceTree = "<group>"; };
+		45DC20151980152A004E2F88 /* AlbumCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewController.h; sourceTree = "<group>"; };
+		45DC20161980152A004E2F88 /* AlbumCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewController.m; sourceTree = "<group>"; };
+		45DC201819802045004E2F88 /* AlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewCell.h; sourceTree = "<group>"; };
+		45DC201919802045004E2F88 /* AlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewCell.m; sourceTree = "<group>"; };
+		45DC201B19802325004E2F88 /* astronaut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = astronaut.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +121,7 @@
 		45449865197C51BC00548FF1 = {
 			isa = PBXGroup;
 			children = (
-				45449879197C51BC00548FF1 /* Your Snaps */,
+				45449879197C51BC00548FF1 /* MySnaps */,
 				45449896197C51BC00548FF1 /* Your SnapsTests */,
 				45449870197C51BC00548FF1 /* Frameworks */,
 				4544986F197C51BC00548FF1 /* Products */,
@@ -94,8 +131,8 @@
 		4544986F197C51BC00548FF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4544986E197C51BC00548FF1 /* Your Snaps.app */,
-				4544988E197C51BC00548FF1 /* Your SnapsTests.xctest */,
+				4544986E197C51BC00548FF1 /* MySnaps.app */,
+				4544988E197C51BC00548FF1 /* MySnapsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,25 +149,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		45449879197C51BC00548FF1 /* Your Snaps */ = {
+		45449879197C51BC00548FF1 /* MySnaps */ = {
 			isa = PBXGroup;
 			children = (
 				45449882197C51BC00548FF1 /* AppDelegate.h */,
 				45449883197C51BC00548FF1 /* AppDelegate.m */,
+				45DC20151980152A004E2F88 /* AlbumCollectionViewController.h */,
+				45DC20161980152A004E2F88 /* AlbumCollectionViewController.m */,
+				45DC201819802045004E2F88 /* AlbumCollectionViewCell.h */,
+				45DC201919802045004E2F88 /* AlbumCollectionViewCell.m */,
+				454498A8197C621C00548FF1 /* AlbumTableViewController.h */,
+				454498A9197C621C00548FF1 /* AlbumTableViewController.m */,
+				454498B6197C627600548FF1 /* FiltersCollectionViewController.h */,
+				454498B7197C627600548FF1 /* FiltersCollectionViewController.m */,
+				454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */,
+				454498B3197C625D00548FF1 /* PhotoCollectionViewCell.h */,
+				454498C1197C636600548FF1 /* PhotoDetailViewController.h */,
+				454498C2197C636600548FF1 /* PhotoDetailViewController.m */,
+				454498BE197C635400548FF1 /* PhotosCollectionViewController.h */,
+				454498BF197C635400548FF1 /* PhotosCollectionViewController.m */,
+				454498BB197C633100548FF1 /* TWPictureDataTransformer.h */,
+				454498BC197C633100548FF1 /* TWPictureDataTransformer.m */,
+				454498AB197C623700548FF1 /* CoreData */,
+				454498A6197C51D200548FF1 /* Storyboard.storyboard */,
 				45449888197C51BC00548FF1 /* Images.xcassets */,
-				45449885197C51BC00548FF1 /* Your_Snaps.xcdatamodeld */,
+				454498C6197C649900548FF1 /* Your_Snaps.xcdatamodeld */,
+				45DC201B19802325004E2F88 /* astronaut.jpg */,
 				4544987A197C51BC00548FF1 /* Supporting Files */,
 			);
+			name = MySnaps;
 			path = "Your Snaps";
 			sourceTree = "<group>";
 		};
 		4544987A197C51BC00548FF1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4544987B197C51BC00548FF1 /* Your Snaps-Info.plist */,
+				4544987B197C51BC00548FF1 /* MySnaps-Info.plist */,
 				4544987C197C51BC00548FF1 /* InfoPlist.strings */,
 				4544987F197C51BC00548FF1 /* main.m */,
-				45449881197C51BC00548FF1 /* Your Snaps-Prefix.pch */,
+				45449881197C51BC00548FF1 /* MySnaps-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -147,18 +204,31 @@
 		45449897197C51BC00548FF1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				45449898197C51BC00548FF1 /* Your SnapsTests-Info.plist */,
+				45449898197C51BC00548FF1 /* MySnapsTests-Info.plist */,
 				45449899197C51BC00548FF1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		454498AB197C623700548FF1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				454498B2197C625D00548FF1 /* CoreDataHelper.h */,
+				454498B4197C626E00548FF1 /* CoreDataHelper.m */,
+				454498AF197C624B00548FF1 /* Photo.h */,
+				454498B0197C624B00548FF1 /* Photo.m */,
+				454498AC197C624300548FF1 /* Album.h */,
+				454498AD197C624300548FF1 /* Album.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4544986D197C51BC00548FF1 /* Your Snaps */ = {
+		4544986D197C51BC00548FF1 /* MySnaps */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 454498A0197C51BC00548FF1 /* Build configuration list for PBXNativeTarget "Your Snaps" */;
+			buildConfigurationList = 454498A0197C51BC00548FF1 /* Build configuration list for PBXNativeTarget "MySnaps" */;
 			buildPhases = (
 				4544986A197C51BC00548FF1 /* Sources */,
 				4544986B197C51BC00548FF1 /* Frameworks */,
@@ -168,14 +238,14 @@
 			);
 			dependencies = (
 			);
-			name = "Your Snaps";
+			name = MySnaps;
 			productName = "Your Snaps";
-			productReference = 4544986E197C51BC00548FF1 /* Your Snaps.app */;
+			productReference = 4544986E197C51BC00548FF1 /* MySnaps.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4544988D197C51BC00548FF1 /* Your SnapsTests */ = {
+		4544988D197C51BC00548FF1 /* MySnapsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 454498A3197C51BC00548FF1 /* Build configuration list for PBXNativeTarget "Your SnapsTests" */;
+			buildConfigurationList = 454498A3197C51BC00548FF1 /* Build configuration list for PBXNativeTarget "MySnapsTests" */;
 			buildPhases = (
 				4544988A197C51BC00548FF1 /* Sources */,
 				4544988B197C51BC00548FF1 /* Frameworks */,
@@ -186,9 +256,9 @@
 			dependencies = (
 				45449895197C51BC00548FF1 /* PBXTargetDependency */,
 			);
-			name = "Your SnapsTests";
+			name = MySnapsTests;
 			productName = "Your SnapsTests";
-			productReference = 4544988E197C51BC00548FF1 /* Your SnapsTests.xctest */;
+			productReference = 4544988E197C51BC00548FF1 /* MySnapsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -205,7 +275,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 45449869197C51BC00548FF1 /* Build configuration list for PBXProject "Your Snaps" */;
+			buildConfigurationList = 45449869197C51BC00548FF1 /* Build configuration list for PBXProject "MySnaps" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,8 +287,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4544986D197C51BC00548FF1 /* Your Snaps */,
-				4544988D197C51BC00548FF1 /* Your SnapsTests */,
+				4544986D197C51BC00548FF1 /* MySnaps */,
+				4544988D197C51BC00548FF1 /* MySnapsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,7 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4544987E197C51BC00548FF1 /* InfoPlist.strings in Resources */,
+				45DC201C19802325004E2F88 /* astronaut.jpg in Resources */,
 				45449889197C51BC00548FF1 /* Images.xcassets in Resources */,
+				454498A7197C51D200548FF1 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,9 +320,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454498B8197C627600548FF1 /* FiltersCollectionViewController.m in Sources */,
+				454498BD197C633100548FF1 /* TWPictureDataTransformer.m in Sources */,
+				454498BA197C628200548FF1 /* PhotoCollectionViewCell.m in Sources */,
+				454498B1197C624B00548FF1 /* Photo.m in Sources */,
+				45DC201A19802045004E2F88 /* AlbumCollectionViewCell.m in Sources */,
+				454498C0197C635400548FF1 /* PhotosCollectionViewController.m in Sources */,
 				45449884197C51BC00548FF1 /* AppDelegate.m in Sources */,
+				454498AA197C621C00548FF1 /* AlbumTableViewController.m in Sources */,
 				45449880197C51BC00548FF1 /* main.m in Sources */,
-				45449887197C51BC00548FF1 /* Your_Snaps.xcdatamodeld in Sources */,
+				454498AE197C624300548FF1 /* Album.m in Sources */,
+				45DC20171980152A004E2F88 /* AlbumCollectionViewController.m in Sources */,
+				454498C3197C636600548FF1 /* PhotoDetailViewController.m in Sources */,
+				454498C8197C649900548FF1 /* Your_Snaps.xcdatamodeld in Sources */,
+				454498B5197C626E00548FF1 /* CoreDataHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +350,7 @@
 /* Begin PBXTargetDependency section */
 		45449895197C51BC00548FF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4544986D197C51BC00548FF1 /* Your Snaps */;
+			target = 4544986D197C51BC00548FF1 /* MySnaps */;
 			targetProxy = 45449894197C51BC00548FF1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -368,9 +451,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Your Snaps/Your Snaps-Prefix.pch";
-				INFOPLIST_FILE = "Your Snaps/Your Snaps-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Your Snaps/MySnaps-Prefix.pch";
+				INFOPLIST_FILE = "Your Snaps/MySnaps-Info.plist";
+				PRODUCT_NAME = MySnaps;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -381,9 +464,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Your Snaps/Your Snaps-Prefix.pch";
-				INFOPLIST_FILE = "Your Snaps/Your Snaps-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Your Snaps/MySnaps-Prefix.pch";
+				INFOPLIST_FILE = "Your Snaps/MySnaps-Info.plist";
+				PRODUCT_NAME = MySnaps;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -403,8 +486,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Your SnapsTests/Your SnapsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Your SnapsTests/MySnapsTests-Info.plist";
+				PRODUCT_NAME = MySnapsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -421,8 +504,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Your Snaps/Your Snaps-Prefix.pch";
-				INFOPLIST_FILE = "Your SnapsTests/Your SnapsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Your SnapsTests/MySnapsTests-Info.plist";
+				PRODUCT_NAME = MySnapsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -431,7 +514,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		45449869197C51BC00548FF1 /* Build configuration list for PBXProject "Your Snaps" */ = {
+		45449869197C51BC00548FF1 /* Build configuration list for PBXProject "MySnaps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4544989E197C51BC00548FF1 /* Debug */,
@@ -440,31 +523,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		454498A0197C51BC00548FF1 /* Build configuration list for PBXNativeTarget "Your Snaps" */ = {
+		454498A0197C51BC00548FF1 /* Build configuration list for PBXNativeTarget "MySnaps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				454498A1197C51BC00548FF1 /* Debug */,
 				454498A2197C51BC00548FF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		454498A3197C51BC00548FF1 /* Build configuration list for PBXNativeTarget "Your SnapsTests" */ = {
+		454498A3197C51BC00548FF1 /* Build configuration list for PBXNativeTarget "MySnapsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				454498A4197C51BC00548FF1 /* Debug */,
 				454498A5197C51BC00548FF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		45449885197C51BC00548FF1 /* Your_Snaps.xcdatamodeld */ = {
+		454498C6197C649900548FF1 /* Your_Snaps.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				45449886197C51BC00548FF1 /* Your_Snaps.xcdatamodel */,
+				454498C7197C649900548FF1 /* Your_Snaps.xcdatamodel */,
 			);
-			currentVersion = 45449886197C51BC00548FF1 /* Your_Snaps.xcdatamodel */;
+			currentVersion = 454498C7197C649900548FF1 /* Your_Snaps.xcdatamodel */;
 			path = Your_Snaps.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4544986D197C51BC00548FF1"
-               BuildableName = "Your Snaps.app"
-               BlueprintName = "Your Snaps"
-               ReferencedContainer = "container:Your Snaps.xcodeproj">
+               BuildableName = "MySnaps.app"
+               BlueprintName = "MySnaps"
+               ReferencedContainer = "container:MySnaps.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4544988D197C51BC00548FF1"
-               BuildableName = "Your SnapsTests.xctest"
-               BlueprintName = "Your SnapsTests"
-               ReferencedContainer = "container:Your Snaps.xcodeproj">
+               BuildableName = "MySnapsTests.xctest"
+               BlueprintName = "MySnapsTests"
+               ReferencedContainer = "container:MySnaps.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4544986D197C51BC00548FF1"
-            BuildableName = "Your Snaps.app"
-            BlueprintName = "Your Snaps"
-            ReferencedContainer = "container:Your Snaps.xcodeproj">
+            BuildableName = "MySnaps.app"
+            BlueprintName = "MySnaps"
+            ReferencedContainer = "container:MySnaps.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4544986D197C51BC00548FF1"
-            BuildableName = "Your Snaps.app"
-            BlueprintName = "Your Snaps"
-            ReferencedContainer = "container:Your Snaps.xcodeproj">
+            BuildableName = "MySnaps.app"
+            BlueprintName = "MySnaps"
+            ReferencedContainer = "container:MySnaps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4544986D197C51BC00548FF1"
-            BuildableName = "Your Snaps.app"
-            BlueprintName = "Your Snaps"
-            ReferencedContainer = "container:Your Snaps.xcodeproj">
+            BuildableName = "MySnaps.app"
+            BlueprintName = "MySnaps"
+            ReferencedContainer = "container:MySnaps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

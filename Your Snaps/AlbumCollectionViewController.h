@@ -10,4 +10,6 @@
 
 @interface AlbumCollectionViewController : UICollectionViewController
 
+@property (strong, nonatomic) NSMutableArray *albums;
+
 @end
