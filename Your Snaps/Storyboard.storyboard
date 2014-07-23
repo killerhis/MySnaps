@@ -4,44 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Album Table View Controller-->
-        <scene sceneID="lLl-uP-JkV">
-            <objects>
-                <tableViewController id="H3L-Nl-jUQ" customClass="AlbumTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tav-KA-l8L">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="b7f-xm-gi3">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b7f-xm-gi3" id="GfU-Xf-Sfe">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="9IG-pa-m6p" kind="push" identifier="AlbumChosen" id="MFr-96-hnW"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="H3L-Nl-jUQ" id="1Ue-Cb-tW0"/>
-                            <outlet property="delegate" destination="H3L-Nl-jUQ" id="ELM-u0-ECT"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="NGu-Et-iDy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pO4-SY-jK0">
-                            <connections>
-                                <action selector="addAblumBarButtomItemPressed:" destination="H3L-Nl-jUQ" id="d88-sg-nth"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oX7-ci-z2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1140" y="-1"/>
-        </scene>
         <!--Album Collection View Controller-->
         <scene sceneID="eZS-Lu-8DG">
             <objects>
@@ -89,10 +51,12 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bD7-oE-adv">
                             <connections>
                                 <action selector="addAblumBarButtomItemPressed:" destination="7rE-a8-jz7" id="h76-AA-HJd"/>
-                                <segue destination="H3L-Nl-jUQ" kind="push" identifier="Album" id="Qzy-N2-hDg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="9IG-pa-m6p" kind="push" identifier="AlbumChosen" id="aV8-RC-wM9"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEa-7L-eJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

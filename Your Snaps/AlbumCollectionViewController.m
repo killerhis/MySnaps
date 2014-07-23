@@ -7,13 +7,36 @@
 //
 
 #import "AlbumCollectionViewController.h"
-#import "AlbumCollectionViewCell.h"
+#import "Album.h"
+#import "Photo.h"
+#import "CoreDataHelper.h"
+#import "PhotosCollectionViewController.h"
 
 @interface AlbumCollectionViewController ()
+
+@property (strong, nonatomic) NSIndexPath *path;
+//@property (strong, nonatomic) NSMutableArray *photos;
+@property (strong, nonatomic) NSArray *photos;
 
 @end
 
 @implementation AlbumCollectionViewController
+
+- (NSMutableArray *)albums
+{
+    if (!_albums) {
+        _albums = [[NSMutableArray alloc] init];
+    }
+    return _albums;
+}
+
+- (NSArray *)photos
+{
+    if (!_photos) {
+        _photos = [[NSMutableArray alloc] init];
+    }
+    return _photos;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,13 +52,69 @@
     [super viewDidLoad];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Album"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+    
+    NSError *error = nil;
+    
+    NSArray *fetchedAlbum = [[CoreDataHelper managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+    
+    self.albums = [fetchedAlbum mutableCopy];
+    
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - IBActions
+
+- (IBAction)addAblumBarButtomItemPressed:(UIBarButtonItem *)sender
+{
+    UIAlertView *newAlbumAlertView = [[UIAlertView alloc] initWithTitle:@"Enter New Album Name" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
+    [newAlbumAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [newAlbumAlertView show];
+}
+
+#pragma mark - Helper Methods
+
+- (Album *)albumWithName:(NSString *)name
+{
+    NSManagedObjectContext *context = [CoreDataHelper managedObjectContext];
+    
+    Album *album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
+    album.name = name;
+    album.date = [NSDate date];
+    
+    NSError *error = nil;
+    
+    if (![context save:&error]) {
+        // we have error
+        NSLog(@"%@", error);
+    }
+    return album;
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        NSString *alertText = [alertView textFieldAtIndex:0].text;
+        
+        [self.albums addObject:[self albumWithName:alertText]];
+        [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.albums count] -1 inSection:0]]];
+        //[self.collectionView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.albums count] -1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -46,38 +125,66 @@
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    //Photo *photo = self.photos[indexPath.row];
-    
     cell.backgroundColor = [UIColor whiteColor];
-    
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1001];
-    imageView.image = [UIImage imageNamed:@"astronaut.jpg"];
+    
+    Album *selectedAlbum = self.albums[indexPath.row];
+    
+    NSSet *unorderedPhotos = selectedAlbum.photos;
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    NSArray *sortedPhotos = [unorderedPhotos sortedArrayUsingDescriptors:@[dateDescriptor]];
+    
+    //self.photos = [sortedPhotos mutableCopy];
+    self.photos = sortedPhotos;
+        
+    if ([self.photos count] != 0) {
+        Photo *photo = self.photos[0];
+        imageView.image = photo.image;
+    } else {
+        imageView.image = [UIImage imageNamed:@"astronaut.jpg"];
+    }
+    
+    
+    
+    
     
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    label.text = @"Hallo string met heel veel worrden";
+    label.text = selectedAlbum.name;
     
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 30;
+    return [self.albums count];
 }
-
 
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *selectedCell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    //UICollectionViewCell *selectedCell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     
     //self.photo.image = selectedCell.imageView.image;
     
+    self.path = indexPath;
     
-    [self performSegueWithIdentifier:@"Album" sender:nil];
+    [self performSegueWithIdentifier:@"AlbumChosen" sender:nil];
 }
 
+#pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AlbumChosen"]) {
+        if ([segue.destinationViewController isKindOfClass:[PhotosCollectionViewController class]])
+        {
+            PhotosCollectionViewController *targetViewController = segue.destinationViewController;
+            targetViewController.album = self.albums[self.path.row];
+        }
+    }
+}
 
 
 @end
