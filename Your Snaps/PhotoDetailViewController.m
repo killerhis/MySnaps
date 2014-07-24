@@ -36,6 +36,7 @@
     [super viewWillAppear:YES];
     
     self.imageView.image = self.photo.image;
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning

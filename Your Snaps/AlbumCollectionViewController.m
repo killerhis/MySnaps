@@ -144,10 +144,6 @@
         imageView.image = [UIImage imageNamed:@"astronaut.jpg"];
     }
     
-    
-    
-    
-    
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
     label.text = selectedAlbum.name;
     
