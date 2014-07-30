@@ -13,13 +13,15 @@
 #import "CoreDataHelper.h"
 #import "PhotoDetailViewController.h"
 
-@interface PhotosCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface PhotosCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) NSMutableArray *photos;
 
 @end
 
-@implementation PhotosCollectionViewController
+@implementation PhotosCollectionViewController {
+    BOOL cameraIsAvailable;
+}
 
 - (NSMutableArray *)photos
 {
@@ -42,6 +44,7 @@
 {
     [super viewDidLoad];
     self.collectionView.backgroundColor = [UIColor whiteColor];
+    cameraIsAvailable = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -72,9 +75,8 @@
         if ([segue.destinationViewController isKindOfClass:[PhotoDetailViewController class]])
         {
             PhotoDetailViewController *targetViewController = segue.destinationViewController;
-            NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
-            
-            Photo *selectedPhoto = self.photos[indexPath.row];
+            //NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
+            Photo *selectedPhoto = [self.photos lastObject];//self.photos[indexPath.row];
             targetViewController.photo = selectedPhoto;
         }
     }
@@ -83,7 +85,25 @@
 
 - (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender
 {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        cameraIsAvailable = YES;
+        UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
+                                @"Take Photo",
+                                @"Choose From Collection",
+                                nil];
+        [popup showInView:[UIApplication sharedApplication].keyWindow];
+    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        cameraIsAvailable = NO;
+        UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
+                                @"Choose From Collection",
+                                nil];
+        [popup showInView:[UIApplication sharedApplication].keyWindow];
+    }
+    
+    
+    /*UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
@@ -93,7 +113,7 @@
         picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     }
     
-    [self presentViewController:picker animated:YES completion:nil];
+    [self presentViewController:picker animated:YES completion:nil];*/
 }
 
 #pragma mark - Helper Methods
@@ -147,12 +167,47 @@
     [self.collectionView reloadData];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"DetailSegue" sender:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     NSLog(@"cancel");
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+
+    
+    if (cameraIsAvailable)
+    {
+        switch (buttonIndex) {
+            case 0:
+                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                [self presentViewController:picker animated:YES completion:nil];
+                break;
+            case 1:
+                picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+                [self presentViewController:picker animated:YES completion:nil];
+                break;
+            default:
+                break;
+        }
+    } else {
+        switch (buttonIndex) {
+            case 0:
+                picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+                [self presentViewController:picker animated:YES completion:nil];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 @end
