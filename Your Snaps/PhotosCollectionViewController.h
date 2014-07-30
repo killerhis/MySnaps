@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Album.h"
+#import "MWPhotoBrowser.h"
 
-@interface PhotosCollectionViewController : UICollectionViewController
+@interface PhotosCollectionViewController : UICollectionViewController <MWPhotoBrowserDelegate>
 
 @property (strong, nonatomic) Album *album;
 

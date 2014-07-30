@@ -16,7 +16,7 @@
 @interface PhotosCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) NSMutableArray *photos;
-
+@property (strong, nonatomic) NSMutableArray *slider;
 @end
 
 @implementation PhotosCollectionViewController {
@@ -155,6 +155,51 @@
 {
     return [self.photos count];;
 }
+
+#pragma mark -UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.slider = [NSMutableArray array];
+    
+    Photo *photo1 = self.photos[0];
+    Photo *photo2 = self.photos[1];
+    Photo *photo3 = self.photos[2];
+    
+    [self.slider addObject:[MWPhoto photoWithImage:photo1.image]];
+    [self.slider addObject:[MWPhoto photoWithImage:photo2.image]];
+    [self.slider addObject:[MWPhoto photoWithImage:photo3.image]];
+    
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    
+    browser.displayActionButton = YES;
+    browser.displayNavArrows = YES;
+    browser.zoomPhotosToFill =YES;
+    browser.alwaysShowControls = NO;
+    browser.enableGrid = NO;
+    browser.startOnGrid = NO;
+    
+    [browser setCurrentPhotoIndex:1];
+    
+    [self.navigationController pushViewController:browser animated:YES];
+    
+    [browser showNextPhotoAnimated:YES];
+    [browser showPreviousPhotoAnimated:YES];
+    
+}
+
+#pragma mark - MWPhotoBrowserDelegate
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return self.slider.count;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    if (index < self.slider.count)
+        return [self.slider objectAtIndex:index];
+    return nil;
+}
+
 
 #pragma mark - UIImagePickerControllerDelegate
 
