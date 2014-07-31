@@ -1,26 +1,28 @@
 //
-//  PhotosCollectionViewController.m
-//  YourSnaps
+//  PhotoCollectionViewController.m
+//  MySnaps
 //
-//  Created by Hicham Chourak on 19/07/14.
+//  Created by Hicham Chourak on 31/07/14.
 //  Copyright (c) 2014 Hicham Chourak. All rights reserved.
 //
 
-#import "PhotosCollectionViewController.h"
+#import "PhotoCollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
 #import "Photo.h"
 #import "TWPictureDataTransformer.h"
 #import "CoreDataHelper.h"
 #import "PhotoDetailViewController.h"
 
-@interface PhotosCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface PhotoCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *photos;
 @property (strong, nonatomic) NSMutableArray *slider;
 @property (strong, nonatomic) Photo *photo;
+
 @end
 
-@implementation PhotosCollectionViewController {
+@implementation PhotoCollectionViewController {
     BOOL cameraIsAvailable;
 }
 
@@ -105,16 +107,36 @@
     
     
     /*UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
+     picker.delegate = self;
+     
+     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+     {
+     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+     } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+     picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+     }
+     
+     [self presentViewController:picker animated:YES completion:nil];*/
+}
+
+- (IBAction)deleteBarButtonItemPressed:(UIBarButtonItem *)sender
+{
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
     
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
-        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    }
+    browser.zoomPhotosToFill = YES;
+    browser.displayActionButton = YES;
+    browser.displayNavArrows = YES;
+    browser.alwaysShowControls = NO;
+    browser.enableGrid = NO;
+    browser.startOnGrid = NO;
+    browser.displaySelectionButtons = YES;
     
-    [self presentViewController:picker animated:YES completion:nil];*/
+    [browser setCurrentPhotoIndex:0];
+    
+    [self.navigationController pushViewController:browser animated:YES];
+    
+    [browser showNextPhotoAnimated:YES];
+    [browser showPreviousPhotoAnimated:YES];
 }
 
 #pragma mark - Helper Methods
@@ -154,7 +176,12 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.photos count];;
+    return [self.photos count];
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
 }
 
 #pragma mark -UICollectionViewDelegate
@@ -162,14 +189,14 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-
+    
     browser.zoomPhotosToFill = YES;
     browser.displayActionButton = YES;
     browser.displayNavArrows = YES;
     browser.alwaysShowControls = NO;
     browser.enableGrid = NO;
     browser.startOnGrid = NO;
-    browser.displaySelectionButtons = YES;
+    //browser.displaySelectionButtons = YES;
     
     [browser setCurrentPhotoIndex:indexPath.row];
     
@@ -251,7 +278,7 @@
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-
+    
     
     if (cameraIsAvailable)
     {

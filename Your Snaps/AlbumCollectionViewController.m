@@ -174,11 +174,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"AlbumChosen"]) {
-        if ([segue.destinationViewController isKindOfClass:[PhotosCollectionViewController class]])
-        {
-            PhotosCollectionViewController *targetViewController = segue.destinationViewController;
-            targetViewController.album = self.albums[self.path.row];
-        }
+        PhotosCollectionViewController *targetViewController = segue.destinationViewController;
+        targetViewController.album = self.albums[self.path.row];
     }
 }
 

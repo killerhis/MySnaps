@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *filters;
 @property (strong, nonatomic) CIContext *context;
 @property (strong, nonatomic) UIImage *scaledImage;
+
 @end
 
 @implementation PhotoDetailViewController
