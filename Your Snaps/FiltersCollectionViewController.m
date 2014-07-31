@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) NSMutableArray *filters;
 @property (strong, nonatomic) CIContext *context;
-
+@property (strong, nonatomic) UIImage *filterImage;
 @end
 
 @implementation FiltersCollectionViewController
@@ -37,6 +37,17 @@
     }
     
     return _context;
+}
+
+- (UIImage *)filterImage
+{
+    if (!_filterImage)
+    {
+        _filterImage = [[UIImage alloc] init];
+        
+    }
+    
+    return _filterImage;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -94,6 +105,8 @@
     
     UIImage *finalImage = [UIImage imageWithCGImage:cgImage];
     
+    CGImageRelease(cgImage);
+    
     return finalImage;
 }
 
@@ -110,10 +123,10 @@
     dispatch_queue_t filterQueue = dispatch_queue_create("filter queue", NULL);
     
     dispatch_async(filterQueue, ^{
-        //UIImage *filterImage = [self filteredImageFromImage:self.photo.originalImage andFilter:self.filters[indexPath.row]];
-        UIImage *filterImage = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cell.imageView.image = filterImage;
+            //UIImage *filterImage = [self filteredImageFromImage:self.photo.originalImage andFilter:self.filters[indexPath.row]];
+            self.filterImage = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageView.image = self.filterImage;
         });
     });
     

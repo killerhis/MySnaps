@@ -10,7 +10,7 @@
 #import "Album.h"
 #import "Photo.h"
 #import "CoreDataHelper.h"
-#import "PhotosCollectionViewController.h"
+#import "PhotoCollectionViewController.h"
 
 @interface AlbumCollectionViewController ()
 
@@ -174,7 +174,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"AlbumChosen"]) {
-        PhotosCollectionViewController *targetViewController = segue.destinationViewController;
+        PhotoCollectionViewController *targetViewController = segue.destinationViewController;
         targetViewController.album = self.albums[self.path.row];
     }
 }

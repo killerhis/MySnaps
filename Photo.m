@@ -14,7 +14,7 @@
 
 @dynamic date;
 @dynamic image;
-@dynamic originalImage;
+//@dynamic originalImage;
 @dynamic albumBook;
 
 @end

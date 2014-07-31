@@ -8,11 +8,10 @@
     <entity name="Photo" representedClassName="Photo" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="originalImage" optional="YES" attributeType="Transformable" syncable="YES"/>
         <relationship name="albumBook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="photos" inverseEntity="Album" syncable="YES"/>
     </entity>
     <elements>
         <element name="Album" positionX="414" positionY="1161" width="128" height="88"/>
-        <element name="Photo" positionX="702" positionY="1161" width="128" height="103"/>
+        <element name="Photo" positionX="702" positionY="1161" width="128" height="90"/>
     </elements>
 </model>

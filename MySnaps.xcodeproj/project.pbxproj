@@ -27,7 +27,6 @@
 		454498B8197C627600548FF1 /* FiltersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B7197C627600548FF1 /* FiltersCollectionViewController.m */; };
 		454498BA197C628200548FF1 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */; };
 		454498BD197C633100548FF1 /* TWPictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498BC197C633100548FF1 /* TWPictureDataTransformer.m */; };
-		454498C0197C635400548FF1 /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498BF197C635400548FF1 /* PhotosCollectionViewController.m */; };
 		454498C3197C636600548FF1 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498C2197C636600548FF1 /* PhotoDetailViewController.m */; };
 		454498C8197C649900548FF1 /* Your_Snaps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 454498C6197C649900548FF1 /* Your_Snaps.xcdatamodeld */; };
 		45966D4619893FCC00379B60 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45966D4519893FCC00379B60 /* MessageUI.framework */; };
@@ -81,8 +80,6 @@
 		454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		454498BB197C633100548FF1 /* TWPictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWPictureDataTransformer.h; sourceTree = "<group>"; };
 		454498BC197C633100548FF1 /* TWPictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPictureDataTransformer.m; sourceTree = "<group>"; };
-		454498BE197C635400548FF1 /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
-		454498BF197C635400548FF1 /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
 		454498C1197C636600548FF1 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
 		454498C2197C636600548FF1 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		454498C7197C649900548FF1 /* Your_Snaps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Your_Snaps.xcdatamodel; sourceTree = "<group>"; };
@@ -186,8 +183,6 @@
 				454498B3197C625D00548FF1 /* PhotoCollectionViewCell.h */,
 				454498C1197C636600548FF1 /* PhotoDetailViewController.h */,
 				454498C2197C636600548FF1 /* PhotoDetailViewController.m */,
-				454498BE197C635400548FF1 /* PhotosCollectionViewController.h */,
-				454498BF197C635400548FF1 /* PhotosCollectionViewController.m */,
 				45029515198A618F00279691 /* PhotoCollectionViewController.h */,
 				45029516198A618F00279691 /* PhotoCollectionViewController.m */,
 				454498BB197C633100548FF1 /* TWPictureDataTransformer.h */,
@@ -383,7 +378,6 @@
 				45DC20281980725E004E2F88 /* Album.m in Sources */,
 				454498BA197C628200548FF1 /* PhotoCollectionViewCell.m in Sources */,
 				45DC201A19802045004E2F88 /* AlbumCollectionViewCell.m in Sources */,
-				454498C0197C635400548FF1 /* PhotosCollectionViewController.m in Sources */,
 				45029517198A618F00279691 /* PhotoCollectionViewController.m in Sources */,
 				45449884197C51BC00548FF1 /* AppDelegate.m in Sources */,
 				45449880197C51BC00548FF1 /* main.m in Sources */,

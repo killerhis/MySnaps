@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *filters;
 @property (strong, nonatomic) CIContext *context;
 @property (strong, nonatomic) UIImage *scaledImage;
+@property (strong, nonatomic) UIImage *filterImage;
 
 @end
 
@@ -39,6 +40,17 @@
     }
     
     return _context;
+}
+
+- (UIImage *)filterImage
+{
+    if (!_filterImage)
+    {
+        _filterImage = [[UIImage alloc] init];
+        
+    }
+    
+    return _filterImage;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -154,6 +166,7 @@
     CGImageRef cgImage = [self.context createCGImage:filteredImage fromRect:extent];
     
     UIImage *finalImage = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
     
     return finalImage;
 }
@@ -214,14 +227,16 @@
         self.imageView.image = self.photo.image;
         [self.imageView setNeedsDisplay];
     } else {
-        dispatch_queue_t filterQueue = dispatch_queue_create("filter queue", NULL);
+        dispatch_queue_t filterQueue = dispatch_queue_create("filter queue", 0);
         
         dispatch_async(filterQueue, ^{
             //UIImage *filterImage = [self filteredImageFromImage:self.photo.originalImage andFilter:self.filters[indexPath.row-1]];
-            UIImage *filterImage = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row-1]];
+            self.filterImage = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row-1]];
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.imageView.image = filterImage;
-                [self.imageView setNeedsDisplay];
+                self.imageView.image = self.filterImage;
+                //[self.imageView setNeedsDisplay];
+                [self.view reloadInputViews];
+                NSLog(@"%i", indexPath.row);
             });
         });
     }

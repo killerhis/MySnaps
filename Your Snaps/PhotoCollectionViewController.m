@@ -159,6 +159,29 @@
     return photo;
 }
 
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(int)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    
+    float scaleRatio = 0;
+    
+    if (image.size.width < image.size.height)
+    {
+        scaleRatio = newSize / image.size.width;
+    } else {
+        scaleRatio = newSize / image.size.height;
+    }
+    
+    CGSize size = CGSizeMake((int)(image.size.width * scaleRatio), (int)(image.size.height * scaleRatio));
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -256,8 +279,18 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = info[UIImagePickerControllerEditedImage];
-    if (!image) image = info[UIImagePickerControllerOriginalImage];
+    UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
+    if (!selectedImage) selectedImage = info[UIImagePickerControllerOriginalImage];
+    
+    int scale = 960;
+    UIImage *image;
+    
+    if (selectedImage.size.width > scale || selectedImage.size.height > scale )
+    {
+        image = [self imageWithImage:selectedImage scaledToSize:960];
+    } else {
+        image = selectedImage;
+    }    
     
     [self.photos addObject:[self photoFromImage:image]];
     [self.collectionView reloadData];
