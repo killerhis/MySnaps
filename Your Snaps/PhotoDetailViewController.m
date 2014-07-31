@@ -63,7 +63,8 @@
     
     self.imageView.image = self.photo.image;
     self.view.backgroundColor = [UIColor blackColor];
-    self.scaledImage = [self imageWithImage:self.photo.originalImage scaledToSize:80];
+    //self.scaledImage = [self imageWithImage:self.photo.originalImage scaledToSize:80];
+    self.scaledImage = [self imageWithImage:self.photo.image scaledToSize:80];
 }
 
 - (void)didReceiveMemoryWarning
@@ -209,13 +210,15 @@
     //self.photo.image = selectedCell.imageView.image;
     if (indexPath.row == 0)
     {
-        self.imageView.image = self.photo.originalImage;
+        //self.imageView.image = self.photo.originalImage;
+        self.imageView.image = self.photo.image;
         [self.imageView setNeedsDisplay];
     } else {
         dispatch_queue_t filterQueue = dispatch_queue_create("filter queue", NULL);
         
         dispatch_async(filterQueue, ^{
-            UIImage *filterImage = [self filteredImageFromImage:self.photo.originalImage andFilter:self.filters[indexPath.row-1]];
+            //UIImage *filterImage = [self filteredImageFromImage:self.photo.originalImage andFilter:self.filters[indexPath.row-1]];
+            UIImage *filterImage = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row-1]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imageView.image = filterImage;
                 [self.imageView setNeedsDisplay];

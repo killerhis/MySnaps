@@ -145,7 +145,7 @@
 {
     Photo *photo = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:[CoreDataHelper managedObjectContext]];
     photo.image = image;
-    photo.originalImage = image;
+    //photo.originalImage = image;
     photo.date = [NSDate date];
     photo.albumBook = self.album;
     
