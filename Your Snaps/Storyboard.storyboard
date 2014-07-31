@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Album Collection View Controller - Nature-->
+        <!--Album Collection View Controller - MySnaps-->
         <scene sceneID="eZS-Lu-8DG">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="7rE-a8-jz7" customClass="AlbumCollectionViewController" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="cDG-Hi-Zuq">
-                                <rect key="frame" x="0.0" y="64" width="105" height="115"/>
+                                <rect key="frame" x="0.0" y="0.0" width="105" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="105" height="115"/>
@@ -52,7 +52,7 @@
                             <outlet property="delegate" destination="7rE-a8-jz7" id="9FN-Cp-ZNe"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Nature" id="yCX-bO-lSB">
+                    <navigationItem key="navigationItem" title="MySnaps" id="yCX-bO-lSB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bD7-oE-adv">
                             <connections>
                                 <action selector="addAblumBarButtomItemPressed:" destination="7rE-a8-jz7" id="h76-AA-HJd"/>
@@ -76,12 +76,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2u2-zi-4kn">
-                                <rect key="frame" x="0.0" y="64" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="yaS-1k-YEq">
-                                <rect key="frame" x="0.0" y="384" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="302" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="kGm-Yv-YQn">
                                     <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -103,6 +104,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -115,12 +117,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="cancel" id="1Eh-wD-shb">
+                                        <color key="tintColor" red="0.32549019610000002" green="0.37254901959999998" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="deleteButtonPressed:" destination="KM2-ax-VGD" id="Jmp-az-bb8"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="l1g-zM-MvX"/>
                                     <barButtonItem systemItem="save" id="sHi-VR-IRP">
+                                        <color key="tintColor" red="0.32549019610000002" green="0.37254901959999998" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="saveButtonPressed:" destination="KM2-ax-VGD" id="qlD-Wm-1He"/>
                                         </connections>
@@ -128,7 +132,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.32549019610000002" green="0.37254901959999998" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="4kZ-5M-TPl"/>
                     <connections>
@@ -151,6 +155,7 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="iaL-RB-rDO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="BO6-t6-8Fl">
                                     <size key="itemSize" width="160" height="160"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -159,13 +164,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="fsa-gN-GNP" customClass="PhotoCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="64" width="160" height="160"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -178,12 +184,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="3ec-vg-aKc">
+                                        <color key="tintColor" red="0.32549019607843138" green="0.37254901960784315" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="deleteBarButtonItemPressed:" destination="JhH-kG-ekO" id="Aun-nF-c87"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0u7-O6-CgI"/>
                                     <barButtonItem systemItem="camera" id="02w-cA-M3g">
+                                        <color key="tintColor" red="0.32549019610000002" green="0.37254901959999998" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="cameraBarButtonItemPressed:" destination="JhH-kG-ekO" id="RDb-yB-gTp"/>
                                         </connections>
@@ -191,7 +199,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="iaL-RB-rDO" id="zha-ad-5cV"/>

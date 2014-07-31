@@ -204,10 +204,10 @@
 				45029516198A618F00279691 /* PhotoCollectionViewController.m */,
 				454498BB197C633100548FF1 /* PictureDataTransformer.h */,
 				454498BC197C633100548FF1 /* PictureDataTransformer.m */,
-				454498AB197C623700548FF1 /* CoreData */,
 				454498A6197C51D200548FF1 /* Storyboard.storyboard */,
 				45449888197C51BC00548FF1 /* Images.xcassets */,
 				454498C6197C649900548FF1 /* Your_Snaps.xcdatamodeld */,
+				454498AB197C623700548FF1 /* CoreData */,
 				4544987A197C51BC00548FF1 /* Supporting Files */,
 			);
 			name = MySnaps;

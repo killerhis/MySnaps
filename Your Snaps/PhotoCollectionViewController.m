@@ -49,6 +49,9 @@
     self.collectionView.backgroundColor = [UIColor whiteColor];
     cameraIsAvailable = NO;
     self.navigationItem.title = self.albumTitleText;
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor colorWithRed:(239.0 / 255.0) green:(240.0 / 255.0) blue:(244.0 / 255.0) alpha: 1];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,7 +92,6 @@
 
 - (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender
 {
-    
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
         cameraIsAvailable = YES;
@@ -154,7 +156,7 @@
     
     if (![[photo managedObjectContext] save:&error]) {
         //Error
-        NSLog(@"%@", error);
+        //NSLog(@"%@", error);
     }
     
     return photo;
@@ -224,11 +226,10 @@
     
     [browser setCurrentPhotoIndex:indexPath.row];
     
-    [self.navigationController pushViewController:browser animated:YES];
-    
     [browser showNextPhotoAnimated:YES];
     [browser showPreviousPhotoAnimated:YES];
     
+    [self.navigationController pushViewController:browser animated:YES];
 }
 
 #pragma mark - MWPhotoBrowserDelegate
@@ -270,7 +271,7 @@
     
     if (error)
     {
-        NSLog(@"%@", error);
+        //NSLog(@"%@", error);
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -327,7 +328,7 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    NSLog(@"cancel");
+    //NSLog(@"cancel");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -337,7 +338,6 @@
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    
     
     if (cameraIsAvailable)
     {
@@ -364,5 +364,26 @@
         }
     }
 }
+
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet
+{
+    for (UIView *subview in actionSheet.subviews) {
+        if ([subview isKindOfClass:[UIButton class]]) {
+            UIButton *button = (UIButton *)subview;
+            [button setTitleColor:[UIColor colorWithRed:(83.0 / 255.0) green:(95.0 / 255.0) blue:(147.0 / 255.0) alpha: 1] forState:UIControlStateNormal];
+        }
+    }
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    /*navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    [self setNeedsStatusBarAppearanceUpdate];*/
+    
+    navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
 
 @end

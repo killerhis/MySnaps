@@ -52,6 +52,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:(239.0 / 255.0) green:(240.0 / 255.0) blue:(244.0 / 255.0) alpha: 1];
     self.collectionView.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -99,7 +100,7 @@
     
     if (![context save:&error]) {
         // we have error
-        NSLog(@"%@", error);
+        //NSLog(@"%@", error);
     }
     return album;
 }

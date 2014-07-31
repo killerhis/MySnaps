@@ -67,6 +67,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.filters = [[[self class] photoFilters] mutableCopy];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor colorWithRed:(239.0 / 255.0) green:(240.0 / 255.0) blue:(244.0 / 255.0) alpha: 1];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -74,7 +77,6 @@
     [super viewWillAppear:YES];
     
     self.imageView.image = self.photo.image;
-    self.view.backgroundColor = [UIColor blackColor];
     //self.scaledImage = [self imageWithImage:self.photo.originalImage scaledToSize:80];
     self.scaledImage = [self imageWithImage:self.photo.image scaledToSize:80];
 }
@@ -130,13 +132,13 @@
     CIFilter *colorClamp = [CIFilter filterWithName:@"CIColorClamp" keysAndValues:@"inputMaxComponents", [CIVector vectorWithX:0.9 Y:0.9 Z:0.9 W:0.9], @"inputMinComponents", [CIVector vectorWithX:0.2 Y:0.2 Z:0.2 W:0.2], nil];
     CIFilter *instant = [CIFilter filterWithName:@"CIPhotoEffectInstant" keysAndValues:nil];
     CIFilter *noir = [CIFilter filterWithName:@"CIPhotoEffectNoir" keysAndValues:nil];
-    CIFilter *vignette = [CIFilter filterWithName:@"CIVignetteEffect" keysAndValues:nil];
+    //CIFilter *vignette = [CIFilter filterWithName:@"CIVignetteEffect" keysAndValues:nil];
     CIFilter *colorControl = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputSaturationKey, @0.5, nil];
     CIFilter *transfer = [CIFilter filterWithName:@"CIPhotoEffectTransfer" keysAndValues:nil];
     CIFilter *unsharpen = [CIFilter filterWithName:@"CIUnsharpMask" keysAndValues:nil];
     CIFilter *monochrome = [CIFilter filterWithName:@"CIColorMonochrome" keysAndValues:nil];
     
-    NSArray *allFilters = @[sepia, blur, colorClamp, instant, noir, vignette, colorControl, transfer, unsharpen, monochrome];
+    NSArray *allFilters = @[sepia, blur, colorClamp, instant, noir, colorControl, transfer, unsharpen, monochrome];
     
     return allFilters;
 }
