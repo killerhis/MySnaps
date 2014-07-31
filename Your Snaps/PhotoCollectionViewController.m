@@ -343,12 +343,10 @@
     {
         switch (buttonIndex) {
             case 0:
-                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                [self presentViewController:picker animated:YES completion:nil];
+                [self performSelector:@selector(showCamera) withObject:nil afterDelay:0.3];
                 break;
             case 1:
-                picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-                [self presentViewController:picker animated:YES completion:nil];
+                [self performSelector:@selector(showSavedPhotos) withObject:nil afterDelay:0.3];
                 break;
             default:
                 break;
@@ -356,13 +354,29 @@
     } else {
         switch (buttonIndex) {
             case 0:
-                picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-                [self presentViewController:picker animated:YES completion:nil];
+                [self performSelector:@selector(showSavedPhotos) withObject:nil afterDelay:0.3];
                 break;
             default:
                 break;
         }
     }
+}
+
+- (void)showCamera
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)showSavedPhotos
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 - (void)willPresentActionSheet:(UIActionSheet *)actionSheet
@@ -377,11 +391,6 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    /*navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    [self setNeedsStatusBarAppearanceUpdate];*/
-    
     navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
