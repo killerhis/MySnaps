@@ -13,7 +13,7 @@
 @interface PhotoCollectionViewController : UIViewController <MWPhotoBrowserDelegate>
 
 @property (strong, nonatomic) Album *album;
-
+@property (strong, nonatomic) NSString *albumTitleText;
 - (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender;
 - (IBAction)deleteBarButtonItemPressed:(UIBarButtonItem *)sender;
 

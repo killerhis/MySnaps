@@ -50,8 +50,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:(239.0 / 255.0) green:(240.0 / 255.0) blue:(244.0 / 255.0) alpha: 1];
+    self.collectionView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -125,7 +125,7 @@
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor clearColor];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1001];
     
     Album *selectedAlbum = self.albums[indexPath.row];
@@ -141,7 +141,7 @@
         Photo *photo = self.photos[0];
         imageView.image = photo.image;
     } else {
-        imageView.image = [UIImage imageNamed:@"astronaut.jpg"];
+        imageView.image = nil;//[UIImage imageNamed:@"astronaut.jpg"];
     }
     
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
@@ -173,9 +173,12 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    Album *selectedAlbum = self.albums[self.path.row];
+    
     if ([segue.identifier isEqualToString:@"AlbumChosen"]) {
         PhotoCollectionViewController *targetViewController = segue.destinationViewController;
-        targetViewController.album = self.albums[self.path.row];
+        targetViewController.album = selectedAlbum;
+        targetViewController.albumTitleText = selectedAlbum.name;
     }
 }
 

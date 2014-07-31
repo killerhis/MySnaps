@@ -48,6 +48,7 @@
     [super viewDidLoad];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     cameraIsAvailable = NO;
+    self.navigationItem.title = self.albumTitleText;
 }
 
 - (void)viewWillAppear:(BOOL)animated
