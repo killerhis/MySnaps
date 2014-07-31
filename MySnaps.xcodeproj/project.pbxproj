@@ -24,7 +24,6 @@
 		4544989D197C51BC00548FF1 /* Your_SnapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4544989C197C51BC00548FF1 /* Your_SnapsTests.m */; };
 		454498A7197C51D200548FF1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454498A6197C51D200548FF1 /* Storyboard.storyboard */; };
 		454498B5197C626E00548FF1 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B4197C626E00548FF1 /* CoreDataHelper.m */; };
-		454498B8197C627600548FF1 /* FiltersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B7197C627600548FF1 /* FiltersCollectionViewController.m */; };
 		454498BA197C628200548FF1 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */; };
 		454498BD197C633100548FF1 /* TWPictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498BC197C633100548FF1 /* TWPictureDataTransformer.m */; };
 		454498C3197C636600548FF1 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498C2197C636600548FF1 /* PhotoDetailViewController.m */; };
@@ -75,8 +74,6 @@
 		454498B2197C625D00548FF1 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		454498B3197C625D00548FF1 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		454498B4197C626E00548FF1 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
-		454498B6197C627600548FF1 /* FiltersCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersCollectionViewController.h; sourceTree = "<group>"; };
-		454498B7197C627600548FF1 /* FiltersCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersCollectionViewController.m; sourceTree = "<group>"; };
 		454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		454498BB197C633100548FF1 /* TWPictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWPictureDataTransformer.h; sourceTree = "<group>"; };
 		454498BC197C633100548FF1 /* TWPictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPictureDataTransformer.m; sourceTree = "<group>"; };
@@ -177,8 +174,6 @@
 				45DC20161980152A004E2F88 /* AlbumCollectionViewController.m */,
 				45DC201819802045004E2F88 /* AlbumCollectionViewCell.h */,
 				45DC201919802045004E2F88 /* AlbumCollectionViewCell.m */,
-				454498B6197C627600548FF1 /* FiltersCollectionViewController.h */,
-				454498B7197C627600548FF1 /* FiltersCollectionViewController.m */,
 				454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */,
 				454498B3197C625D00548FF1 /* PhotoCollectionViewCell.h */,
 				454498C1197C636600548FF1 /* PhotoDetailViewController.h */,
@@ -373,7 +368,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45DC20251980725E004E2F88 /* Photo.m in Sources */,
-				454498B8197C627600548FF1 /* FiltersCollectionViewController.m in Sources */,
 				454498BD197C633100548FF1 /* TWPictureDataTransformer.m in Sources */,
 				45DC20281980725E004E2F88 /* Album.m in Sources */,
 				454498BA197C628200548FF1 /* PhotoCollectionViewCell.m in Sources */,

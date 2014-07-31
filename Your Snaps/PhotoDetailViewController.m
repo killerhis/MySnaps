@@ -8,7 +8,7 @@
 
 #import "PhotoDetailViewController.h"
 #import "Photo.h"
-#import "FiltersCollectionViewController.h"
+//#import "FiltersCollectionViewController.h"
 
 @interface PhotoDetailViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -83,20 +83,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"FilterSegue"]) {
-        if ([segue.destinationViewController isKindOfClass:[FiltersCollectionViewController class]])
-        {
-            FiltersCollectionViewController *targetViewController = segue.destinationViewController;
-            targetViewController.photo = self.photo;
-        }
-    }
 }
 
 
@@ -234,9 +220,8 @@
             self.filterImage = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row-1]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imageView.image = self.filterImage;
-                //[self.imageView setNeedsDisplay];
-                [self.view reloadInputViews];
-                NSLog(@"%i", indexPath.row);
+                [self.imageView setNeedsDisplay];
+                //[self.view reloadInputViews];
             });
         });
     }
