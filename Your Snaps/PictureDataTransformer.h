@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TWPictureDataTransformer : NSValueTransformer
+@interface PictureDataTransformer : NSValueTransformer
 
 @end

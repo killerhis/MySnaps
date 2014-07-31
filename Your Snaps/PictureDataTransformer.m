@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Hicham Chourak. All rights reserved.
 //
 
-#import "TWPictureDataTransformer.h"
+#import "PictureDataTransformer.h"
 
-@implementation TWPictureDataTransformer
+@implementation PictureDataTransformer
 
 + (Class)transformedValueClass
 {

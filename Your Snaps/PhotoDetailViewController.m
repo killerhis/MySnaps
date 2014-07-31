@@ -96,7 +96,7 @@
         
         if (![[self.photo managedObjectContext] save:&error]) {
             //Handle Error
-            NSLog(@"%@", error);
+            //NSLog(@"%@", error);
         }
         
         [self.navigationController popViewControllerAnimated:YES];

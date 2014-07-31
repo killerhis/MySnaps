@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		45029517198A618F00279691 /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45029516198A618F00279691 /* PhotoCollectionViewController.m */; };
+		45029522198A979D00279691 /* mysnap-icon-29pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502951F198A979D00279691 /* mysnap-icon-29pt.png */; };
+		45029523198A979D00279691 /* mysnap-icon-40pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 45029520198A979D00279691 /* mysnap-icon-40pt.png */; };
+		45029524198A979D00279691 /* mysnap-icon-60pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 45029521198A979D00279691 /* mysnap-icon-60pt.png */; };
 		45449872197C51BC00548FF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45449871197C51BC00548FF1 /* Foundation.framework */; };
 		45449874197C51BC00548FF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45449873197C51BC00548FF1 /* CoreGraphics.framework */; };
 		45449876197C51BC00548FF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45449875197C51BC00548FF1 /* UIKit.framework */; };
@@ -25,7 +28,7 @@
 		454498A7197C51D200548FF1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454498A6197C51D200548FF1 /* Storyboard.storyboard */; };
 		454498B5197C626E00548FF1 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B4197C626E00548FF1 /* CoreDataHelper.m */; };
 		454498BA197C628200548FF1 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */; };
-		454498BD197C633100548FF1 /* TWPictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498BC197C633100548FF1 /* TWPictureDataTransformer.m */; };
+		454498BD197C633100548FF1 /* PictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498BC197C633100548FF1 /* PictureDataTransformer.m */; };
 		454498C3197C636600548FF1 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454498C2197C636600548FF1 /* PhotoDetailViewController.m */; };
 		454498C8197C649900548FF1 /* Your_Snaps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 454498C6197C649900548FF1 /* Your_Snaps.xcdatamodeld */; };
 		45966D4619893FCC00379B60 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45966D4519893FCC00379B60 /* MessageUI.framework */; };
@@ -33,7 +36,6 @@
 		45966D4A19893FF600379B60 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45966D4919893FF600379B60 /* AssetsLibrary.framework */; };
 		45966D4C19893FFF00379B60 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45966D4B19893FFF00379B60 /* ImageIO.framework */; };
 		45DC20171980152A004E2F88 /* AlbumCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DC20161980152A004E2F88 /* AlbumCollectionViewController.m */; };
-		45DC201A19802045004E2F88 /* AlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DC201919802045004E2F88 /* AlbumCollectionViewCell.m */; };
 		45DC201C19802325004E2F88 /* astronaut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45DC201B19802325004E2F88 /* astronaut.jpg */; };
 		45DC20251980725E004E2F88 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DC20241980725E004E2F88 /* Photo.m */; };
 		45DC20281980725E004E2F88 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DC20271980725E004E2F88 /* Album.m */; };
@@ -53,6 +55,9 @@
 /* Begin PBXFileReference section */
 		45029515198A618F00279691 /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
 		45029516198A618F00279691 /* PhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewController.m; sourceTree = "<group>"; };
+		4502951F198A979D00279691 /* mysnap-icon-29pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mysnap-icon-29pt.png"; sourceTree = "<group>"; };
+		45029520198A979D00279691 /* mysnap-icon-40pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mysnap-icon-40pt.png"; sourceTree = "<group>"; };
+		45029521198A979D00279691 /* mysnap-icon-60pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mysnap-icon-60pt.png"; sourceTree = "<group>"; };
 		4544986E197C51BC00548FF1 /* MySnaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySnaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45449871197C51BC00548FF1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45449873197C51BC00548FF1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,8 +80,8 @@
 		454498B3197C625D00548FF1 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		454498B4197C626E00548FF1 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
-		454498BB197C633100548FF1 /* TWPictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWPictureDataTransformer.h; sourceTree = "<group>"; };
-		454498BC197C633100548FF1 /* TWPictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPictureDataTransformer.m; sourceTree = "<group>"; };
+		454498BB197C633100548FF1 /* PictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureDataTransformer.h; sourceTree = "<group>"; };
+		454498BC197C633100548FF1 /* PictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureDataTransformer.m; sourceTree = "<group>"; };
 		454498C1197C636600548FF1 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
 		454498C2197C636600548FF1 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		454498C7197C649900548FF1 /* Your_Snaps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Your_Snaps.xcdatamodel; sourceTree = "<group>"; };
@@ -86,8 +91,6 @@
 		45966D4B19893FFF00379B60 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		45DC20151980152A004E2F88 /* AlbumCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewController.h; sourceTree = "<group>"; };
 		45DC20161980152A004E2F88 /* AlbumCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewController.m; sourceTree = "<group>"; };
-		45DC201819802045004E2F88 /* AlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewCell.h; sourceTree = "<group>"; };
-		45DC201919802045004E2F88 /* AlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewCell.m; sourceTree = "<group>"; };
 		45DC201B19802325004E2F88 /* astronaut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = astronaut.jpg; sourceTree = "<group>"; };
 		45DC20231980725E004E2F88 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = ../Photo.h; sourceTree = "<group>"; };
 		45DC20241980725E004E2F88 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = ../Photo.m; sourceTree = "<group>"; };
@@ -128,6 +131,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45029518198A8D7500279691 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4502951F198A979D00279691 /* mysnap-icon-29pt.png */,
+				45029520198A979D00279691 /* mysnap-icon-40pt.png */,
+				45029521198A979D00279691 /* mysnap-icon-60pt.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		45449865197C51BC00548FF1 = {
 			isa = PBXGroup;
 			children = (
@@ -168,20 +181,19 @@
 		45449879197C51BC00548FF1 /* MySnaps */ = {
 			isa = PBXGroup;
 			children = (
+				45029518198A8D7500279691 /* images */,
 				45449882197C51BC00548FF1 /* AppDelegate.h */,
 				45449883197C51BC00548FF1 /* AppDelegate.m */,
 				45DC20151980152A004E2F88 /* AlbumCollectionViewController.h */,
 				45DC20161980152A004E2F88 /* AlbumCollectionViewController.m */,
-				45DC201819802045004E2F88 /* AlbumCollectionViewCell.h */,
-				45DC201919802045004E2F88 /* AlbumCollectionViewCell.m */,
 				454498B9197C628200548FF1 /* PhotoCollectionViewCell.m */,
 				454498B3197C625D00548FF1 /* PhotoCollectionViewCell.h */,
 				454498C1197C636600548FF1 /* PhotoDetailViewController.h */,
 				454498C2197C636600548FF1 /* PhotoDetailViewController.m */,
 				45029515198A618F00279691 /* PhotoCollectionViewController.h */,
 				45029516198A618F00279691 /* PhotoCollectionViewController.m */,
-				454498BB197C633100548FF1 /* TWPictureDataTransformer.h */,
-				454498BC197C633100548FF1 /* TWPictureDataTransformer.m */,
+				454498BB197C633100548FF1 /* PictureDataTransformer.h */,
+				454498BC197C633100548FF1 /* PictureDataTransformer.m */,
 				454498AB197C623700548FF1 /* CoreData */,
 				454498A6197C51D200548FF1 /* Storyboard.storyboard */,
 				45449888197C51BC00548FF1 /* Images.xcassets */,
@@ -312,7 +324,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45029523198A979D00279691 /* mysnap-icon-40pt.png in Resources */,
 				4544987E197C51BC00548FF1 /* InfoPlist.strings in Resources */,
+				45029524198A979D00279691 /* mysnap-icon-60pt.png in Resources */,
+				45029522198A979D00279691 /* mysnap-icon-29pt.png in Resources */,
 				45DC201C19802325004E2F88 /* astronaut.jpg in Resources */,
 				45449889197C51BC00548FF1 /* Images.xcassets in Resources */,
 				454498A7197C51D200548FF1 /* Storyboard.storyboard in Resources */,
@@ -368,10 +383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45DC20251980725E004E2F88 /* Photo.m in Sources */,
-				454498BD197C633100548FF1 /* TWPictureDataTransformer.m in Sources */,
+				454498BD197C633100548FF1 /* PictureDataTransformer.m in Sources */,
 				45DC20281980725E004E2F88 /* Album.m in Sources */,
 				454498BA197C628200548FF1 /* PhotoCollectionViewCell.m in Sources */,
-				45DC201A19802045004E2F88 /* AlbumCollectionViewCell.m in Sources */,
 				45029517198A618F00279691 /* PhotoCollectionViewController.m in Sources */,
 				45449884197C51BC00548FF1 /* AppDelegate.m in Sources */,
 				45449880197C51BC00548FF1 /* main.m in Sources */,

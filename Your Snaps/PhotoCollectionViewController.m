@@ -9,7 +9,7 @@
 #import "PhotoCollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
 #import "Photo.h"
-#import "TWPictureDataTransformer.h"
+#import "PictureDataTransformer.h"
 #import "CoreDataHelper.h"
 #import "PhotoDetailViewController.h"
 
@@ -279,24 +279,49 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
-    if (!selectedImage) selectedImage = info[UIImagePickerControllerOriginalImage];
-    
-    int scale = 960;
-    UIImage *image;
-    
-    if (selectedImage.size.width > scale || selectedImage.size.height > scale )
-    {
-        image = [self imageWithImage:selectedImage scaledToSize:960];
-    } else {
-        image = selectedImage;
-    }    
-    
-    [self.photos addObject:[self photoFromImage:image]];
-    [self.collectionView reloadData];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self performSegueWithIdentifier:@"DetailSegue" sender:nil];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIView *primaryImage = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.bounds.size.width,self.view.bounds.size.height)];
+            primaryImage.backgroundColor = [UIColor clearColor];
+            primaryImage.alpha =1.0f;
+            
+            UIView *secondaryImage = [[UIView alloc] initWithFrame:CGRectMake(0,0,70,70)];
+            secondaryImage.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+            secondaryImage.backgroundColor = [UIColor blackColor];
+            secondaryImage.alpha = 0.7;
+            secondaryImage.layer.cornerRadius = 5;
+            [primaryImage addSubview:secondaryImage];
+            UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+            indicator.center = CGPointMake(35, 35);
+            [indicator setHidesWhenStopped:NO];
+            [secondaryImage addSubview:indicator];
+            [indicator startAnimating];
+            
+            
+            [picker.view addSubview:primaryImage];
+            
+        });
+        
+        UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
+        if (!selectedImage) selectedImage = info[UIImagePickerControllerOriginalImage];
+        
+        int scale = 960;
+        UIImage *image;
+        
+        if (selectedImage.size.width > scale || selectedImage.size.height > scale )
+        {
+            image = [self imageWithImage:selectedImage scaledToSize:960];
+        } else {
+            image = selectedImage;
+        }
+        
+        [self.photos addObject:[self photoFromImage:image]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{ 
+            [self dismissViewControllerAnimated:YES completion:nil];
+            [self performSegueWithIdentifier:@"DetailSegue" sender:nil];
+        });
+    });
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
