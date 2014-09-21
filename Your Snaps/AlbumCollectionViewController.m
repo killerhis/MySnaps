@@ -11,6 +11,7 @@
 #import "Photo.h"
 #import "CoreDataHelper.h"
 #import "PhotoCollectionViewController.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface AlbumCollectionViewController ()
 
@@ -53,6 +54,16 @@
     self.view.backgroundColor = [UIColor colorWithRed:(239.0 / 255.0) green:(240.0 / 255.0) blue:(244.0 / 255.0) alpha: 1];
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Google Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"AlbumCollectionView"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

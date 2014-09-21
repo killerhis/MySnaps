@@ -8,6 +8,7 @@
 
 #import "PhotoDetailViewController.h"
 #import "Photo.h"
+#import "GAIDictionaryBuilder.h"
 //#import "FiltersCollectionViewController.h"
 
 @interface PhotoDetailViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -70,6 +71,16 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = [UIColor colorWithRed:(239.0 / 255.0) green:(240.0 / 255.0) blue:(244.0 / 255.0) alpha: 1];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Google Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"PhotoDetailView"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

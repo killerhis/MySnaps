@@ -13,8 +13,9 @@
 		45029524198A979D00279691 /* mysnap-icon-60pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 45029521198A979D00279691 /* mysnap-icon-60pt.png */; };
 		45029526198AA10000279691 /* polaroid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45029525198AA10000279691 /* polaroid@2x.png */; };
 		4502952C198AC6B600279691 /* nav_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502952B198AC6B600279691 /* nav_bg@2x.png */; };
-		4502952F198AD75400279691 /* mysnaps-splashscreen_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502952D198AD75400279691 /* mysnaps-splashscreen_@2x.png */; };
-		45029530198AD75400279691 /* mysnaps-splashscreen_r4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502952E198AD75400279691 /* mysnaps-splashscreen_r4.png */; };
+		451A661E19CF3DC70075D195 /* mysnap-icon-60pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451A661D19CF3DC70075D195 /* mysnap-icon-60pt@3x.png */; };
+		451A662119CF409C0075D195 /* mysnaps-splashscreen_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451A661F19CF409C0075D195 /* mysnaps-splashscreen_@2x.png */; };
+		451A662219CF409C0075D195 /* mysnaps-splashscreen_r4.png in Resources */ = {isa = PBXBuildFile; fileRef = 451A662019CF409C0075D195 /* mysnaps-splashscreen_r4.png */; };
 		45449872197C51BC00548FF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45449871197C51BC00548FF1 /* Foundation.framework */; };
 		45449874197C51BC00548FF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45449873197C51BC00548FF1 /* CoreGraphics.framework */; };
 		45449876197C51BC00548FF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45449875197C51BC00548FF1 /* UIKit.framework */; };
@@ -63,8 +64,9 @@
 		45029521198A979D00279691 /* mysnap-icon-60pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mysnap-icon-60pt.png"; sourceTree = "<group>"; };
 		45029525198AA10000279691 /* polaroid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "polaroid@2x.png"; sourceTree = "<group>"; };
 		4502952B198AC6B600279691 /* nav_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bg@2x.png"; sourceTree = "<group>"; };
-		4502952D198AD75400279691 /* mysnaps-splashscreen_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mysnaps-splashscreen_@2x.png"; sourceTree = "<group>"; };
-		4502952E198AD75400279691 /* mysnaps-splashscreen_r4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mysnaps-splashscreen_r4.png"; sourceTree = "<group>"; };
+		451A661D19CF3DC70075D195 /* mysnap-icon-60pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mysnap-icon-60pt@3x.png"; sourceTree = "<group>"; };
+		451A661F19CF409C0075D195 /* mysnaps-splashscreen_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mysnaps-splashscreen_@2x.png"; sourceTree = "<group>"; };
+		451A662019CF409C0075D195 /* mysnaps-splashscreen_r4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mysnaps-splashscreen_r4.png"; sourceTree = "<group>"; };
 		4544986E197C51BC00548FF1 /* MySnaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySnaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45449871197C51BC00548FF1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45449873197C51BC00548FF1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,12 +142,13 @@
 		45029518198A8D7500279691 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				4502952D198AD75400279691 /* mysnaps-splashscreen_@2x.png */,
-				4502952E198AD75400279691 /* mysnaps-splashscreen_r4.png */,
+				451A661F19CF409C0075D195 /* mysnaps-splashscreen_@2x.png */,
+				451A662019CF409C0075D195 /* mysnaps-splashscreen_r4.png */,
 				4502952B198AC6B600279691 /* nav_bg@2x.png */,
 				45029525198AA10000279691 /* polaroid@2x.png */,
 				4502951F198A979D00279691 /* mysnap-icon-29pt.png */,
 				45029520198A979D00279691 /* mysnap-icon-40pt.png */,
+				451A661D19CF3DC70075D195 /* mysnap-icon-60pt@3x.png */,
 				45029521198A979D00279691 /* mysnap-icon-60pt.png */,
 			);
 			name = images;
@@ -339,8 +342,9 @@
 				4502952C198AC6B600279691 /* nav_bg@2x.png in Resources */,
 				45029522198A979D00279691 /* mysnap-icon-29pt.png in Resources */,
 				45449889197C51BC00548FF1 /* Images.xcassets in Resources */,
-				4502952F198AD75400279691 /* mysnaps-splashscreen_@2x.png in Resources */,
-				45029530198AD75400279691 /* mysnaps-splashscreen_r4.png in Resources */,
+				451A661E19CF3DC70075D195 /* mysnap-icon-60pt@3x.png in Resources */,
+				451A662119CF409C0075D195 /* mysnaps-splashscreen_@2x.png in Resources */,
+				451A662219CF409C0075D195 /* mysnaps-splashscreen_r4.png in Resources */,
 				45029526198AA10000279691 /* polaroid@2x.png in Resources */,
 				454498A7197C51D200548FF1 /* Storyboard.storyboard in Resources */,
 			);
@@ -446,6 +450,76 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		45029531198B010900279691 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hicham Chourak (TF9VESMTKV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hicham Chourak (TF9VESMTKV)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "194C7EE9-5652-4FEC-BC9A-32205E60ADF1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		45029532198B010900279691 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9504C1E7584F4EC4A756BE8E /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hicham Chourak (TF9VESMTKV)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Your Snaps/MySnaps-Prefix.pch";
+				INFOPLIST_FILE = "Your Snaps/MySnaps-Info.plist";
+				PRODUCT_NAME = MySnaps;
+				PROVISIONING_PROFILE = "194C7EE9-5652-4FEC-BC9A-32205E60ADF1";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
+		45029533198B010900279691 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Your Snaps.app/Your Snaps";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Your Snaps/Your Snaps-Prefix.pch";
+				INFOPLIST_FILE = "Your SnapsTests/MySnapsTests-Info.plist";
+				PRODUCT_NAME = MySnapsTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Distribution;
+		};
 		4544989E197C51BC00548FF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -462,7 +536,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hicham Chourak (TF9VESMTKV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hicham Chourak (TF9VESMTKV)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -478,8 +553,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "194C7EE9-5652-4FEC-BC9A-32205E60ADF1";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -500,7 +576,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hicham Chourak (TF9VESMTKV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hicham Chourak (TF9VESMTKV)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -510,7 +587,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "194C7EE9-5652-4FEC-BC9A-32205E60ADF1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -523,10 +601,12 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hicham Chourak (TF9VESMTKV)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Your Snaps/MySnaps-Prefix.pch";
 				INFOPLIST_FILE = "Your Snaps/MySnaps-Info.plist";
 				PRODUCT_NAME = MySnaps;
+				PROVISIONING_PROFILE = "194C7EE9-5652-4FEC-BC9A-32205E60ADF1";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -539,10 +619,12 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hicham Chourak (TF9VESMTKV)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Your Snaps/MySnaps-Prefix.pch";
 				INFOPLIST_FILE = "Your Snaps/MySnaps-Info.plist";
 				PRODUCT_NAME = MySnaps;
+				PROVISIONING_PROFILE = "194C7EE9-5652-4FEC-BC9A-32205E60ADF1";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -596,6 +678,7 @@
 			buildConfigurations = (
 				4544989E197C51BC00548FF1 /* Debug */,
 				4544989F197C51BC00548FF1 /* Release */,
+				45029531198B010900279691 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -605,6 +688,7 @@
 			buildConfigurations = (
 				454498A1197C51BC00548FF1 /* Debug */,
 				454498A2197C51BC00548FF1 /* Release */,
+				45029532198B010900279691 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -614,6 +698,7 @@
 			buildConfigurations = (
 				454498A4197C51BC00548FF1 /* Debug */,
 				454498A5197C51BC00548FF1 /* Release */,
+				45029533198B010900279691 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

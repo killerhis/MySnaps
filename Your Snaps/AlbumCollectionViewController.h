@@ -10,6 +10,7 @@
 
 @interface AlbumCollectionViewController : UICollectionViewController
 
+
 @property (strong, nonatomic) NSMutableArray *albums;
 - (IBAction)addAblumBarButtomItemPressed:(UIBarButtonItem *)sender;
 @end

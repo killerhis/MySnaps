@@ -12,6 +12,7 @@
 #import "PictureDataTransformer.h"
 #import "CoreDataHelper.h"
 #import "PhotoDetailViewController.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface PhotoCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -54,6 +55,16 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Google Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"PhotoCollectionView"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -87,7 +98,6 @@
             targetViewController.photo = selectedPhoto;
         }
     }
-    
 }
 
 - (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender
@@ -100,6 +110,9 @@
                                 @"Choose From Collection",
                                 nil];
         [popup showInView:[UIApplication sharedApplication].keyWindow];
+        
+        
+        
     } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
         cameraIsAvailable = NO;
         UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
@@ -230,6 +243,11 @@
     [browser showPreviousPhotoAnimated:YES];
     
     [self.navigationController pushViewController:browser animated:YES];
+    
+    // Google Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"PhotoBrowserView"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 #pragma mark - MWPhotoBrowserDelegate
